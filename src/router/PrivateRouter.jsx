@@ -1,9 +1,6 @@
-import React from 'react'
+import { Navigate, Outlet } from "react-router";
 
-const PrivateRouter = () => {
-  return (
-    <div>PrivateRouter</div>
-  )
-}
+export const PrivateRouter = ({authSatutus}) => {
+  return  authSatutus === "autheticated"?<Outlet/> : <Navigate to="/Login" />; 
+}; 
 
-export default PrivateRouter

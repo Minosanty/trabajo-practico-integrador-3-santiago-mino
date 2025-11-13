@@ -1,9 +1,5 @@
-import React from 'react'
+import { Navite, Outlet} from "react-router";
 
-const PublicRoute = () => {
-  return (
-    <div>PublicRoute</div>
-  )
+export const PublicRoute = (authStatus) => {
+  return authStatus === "authenticated" ? <Navigate to="/Home"/> : <Outlet/>   
 }
-
-export default PublicRoute
