@@ -1,6 +1,7 @@
 import { Navigate, Outlet } from "react-router";
+import { Navbar } from "../components/Navbar";
 
-export const PrivateRouter = ({authSatutus}) => {
-  return  authSatutus === "autheticated"?<Outlet/> : <Navigate to="/Login" />; 
-}; 
-
+export const Private = ({authStatus}) =>{
+    return authStatus === "authenticated" ? <Outlet/> : <Navigate to="/login"/>
+    
+}

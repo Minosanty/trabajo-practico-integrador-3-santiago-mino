@@ -1,5 +1,6 @@
-import { Navite, Outlet} from "react-router";
+import { Navigate, Outlet } from "react-router"
 
-export const PublicRoute = (authStatus) => {
-  return authStatus === "authenticated" ? <Navigate to="/Home"/> : <Outlet/>   
+
+export const Public = ({authStatus}) => {
+    return authStatus === "authenticated" ? <Navigate to="/home"/>:<Outlet/>
 }
